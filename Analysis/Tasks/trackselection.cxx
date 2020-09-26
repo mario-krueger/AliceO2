@@ -80,8 +80,7 @@ struct TrackExtensionTask {
     for (auto& track : tracks) {
 
       std::array<float, 2> dca{1e10f, 1e10f};
-      if(track.itsChi2NCl() != 0.f && track.tpcChi2NCl() != 0.f)
-      {
+      if (track.itsChi2NCl() != 0.f && track.tpcChi2NCl() != 0.f) {
         // FIXME: can we simplify this knowing that track is already at dca without copying code from TrackPar?
         float magField = 5.0; // in kG (FIXME: get this from CCDB)
         auto trackPar = getTrackParCov(track);
